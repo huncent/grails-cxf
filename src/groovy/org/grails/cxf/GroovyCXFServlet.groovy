@@ -1,6 +1,6 @@
 package org.grails.cxf
 
-import org.apache.cxf.transport.servlet.CXFServlet
+import org.apache.cxf.transport.servlet.CXFNonSpringServlet
 import org.springframework.context.ApplicationContext
 import javax.servlet.ServletConfig
 import javax.servlet.ServletException
@@ -17,7 +17,7 @@ import org.apache.cxf.frontend.ServerFactoryBean
  *
  * @author Ryan Crum <ryan.j.crum@gmail.com>
  */
-public class GrailsCXFServlet extends CXFServlet {
+public class GrailsCXFServlet extends CXFNonSpringServlet {
   def grailsApplication
 
   public void init(ServletConfig servletConfig) {
@@ -42,7 +42,7 @@ public class GrailsCXFServlet extends CXFServlet {
   
   protected void loadAdditionalConfig(ApplicationContext ctx, ServletConfig servletConfig)
       throws ServletException {
-    super.loadAdditionalConfig(ctx, servletConfig)
+    //super.loadAdditionalConfig(ctx, servletConfig)
     
     def services = GrailsCXFServerFactoryBean.services + GrailsCXFJaxWsServerFactoryBean.services + GrailsCXFRSServerFactoryBean.services
     def childCtx = new GenericApplicationContext(ctx)
