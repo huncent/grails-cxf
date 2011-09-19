@@ -28,10 +28,10 @@ grails.project.dependency.resolution = {
     //compile('org.apache.cxf:cxf-rt-transports-http:2.3.0'){
     //	excludes 'spring-web'
     //}
-    compile('org.apache.cxf:cxf-rt-frontend-jaxws:2.3.0'){
+    compile('org.apache.cxf:cxf-rt-frontend-jaxws:2.4.2'){
       excludes 'spring-web'
     }
-    compile('org.apache.cxf:cxf-rt-frontend-jaxrs:2.3.0'){
+    compile('org.apache.cxf:cxf-rt-frontend-jaxrs:2.4.2'){
       excludes 'xmlbeans', 'spring-web', 'spring-core'
     }
     // runtime 'mysql:mysql-connector-java:5.1.5'
