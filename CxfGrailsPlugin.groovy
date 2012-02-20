@@ -2,7 +2,6 @@ import org.codehaus.groovy.grails.commons.GrailsClassUtils
 import org.apache.cxf.frontend.ServerFactoryBean
 import org.apache.cxf.transport.DestinationFactory
 import org.apache.cxf.transport.DestinationFactoryManager
-import org.apache.cxf.transport.servlet.ServletTransportFactory
 import org.apache.cxf.bus.spring.SpringBusFactory
 import org.apache.cxf.transport.servlet.CXFServlet
 import org.apache.cxf.Bus
@@ -70,7 +69,8 @@ class CxfGrailsPlugin {
     def filterMappings = xml.'filter-mapping'
     def servlets = xml.servlet
     def servletMappings = xml.'servlet-mapping'
-
+    
+    /*
     def hibernateFilter = 'hibernateFilter'
     filters[filters.size() - 1] + {
       filter {
@@ -85,7 +85,7 @@ class CxfGrailsPlugin {
         'url-pattern'("/services/*")
       }
     }
-
+    */
     servlets[servlets.size() - 1] + {
       servlet {
         'servlet-name'('CXFServlet')
